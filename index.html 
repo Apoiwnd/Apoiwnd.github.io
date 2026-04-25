@@ -1,8 +1,50 @@
-<!DOCTYPE html>    <！DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Apoiwnd</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            min-height:100vh;
+            background: url('https://pic1.zhimg.com/v2-f96c6f1040f499c972d09bcb457d97c5_1440w.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family:"华文行楷"，cursive；
+            text-al
+          background: linear-gradient(to right, #7cb342, #b88645, #fdd835);
+-webkit-background-clip: text;
+color: transparent;
+         ign:center;
+            padding-top:80px;
+        }
+        .avatar{
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            border:4px solid white;
+            box-shadow:0 0 20px white;
+        }
+        .box{
+            background:rgba(0,0,0,0.45);
+            backdrop-filter: blur(8px);
+            width:70%;
+            margin:20px auto;
+            padding:40px;
+            border-radius:20px;
+            border:1px solid rgba(255,255,255,0.2);
+        }
+        h1{font-size:42px;margin-bottom:20px;text-shadow:0 0 10px #fff}
+        p{font-size:20px;line-height:2.2;margin:8px 0}
+    </style>
+</head>
 <body>
-<h1>Apoiwnd/h1>  
-<h1>你好，GitHub Pages</h1>  
-<p>真真假假</p>
+    <img class="avatar" src="https://github.com/Apoiwnd/Apoiwnd.github.io/blob/main/515593ld.jpg">
+
+    <div class="box">
+        <h1>🌹</h1>
+        <p>真真假假</p>
+        <p>花色香皆看化</p>
+    </div>
 </body>
 </html>
