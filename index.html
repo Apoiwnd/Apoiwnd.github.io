@@ -2,42 +2,95 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apoiwnd</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         body{
             min-height:100vh;
-            background-color:#ffffff;
+            background-color:#f0f0f0; /* 浅灰色背景 */
             font-family:"微软雅黑",sans-serif;
             text-align:center;
-            padding-top:80px;
-            line-height:3;
+            padding:60px 20px;
+            line-height:1.8;
         }
         .avatar{
-            width:160px;
-            height:160px;
+            width:220px; /* 放大头像 */
+            height:220px;
             border-radius:50%;
             border:4px solid white;
-            box-shadow:0 0 25px white;
-            margin:40px 0;
+            box-shadow:0 0 25px rgba(0,0,0,0.2);
+            margin:40px auto;
+            display:block;
         }
         .name{
-            font-size:65px;
+            font-size:80px; /* 放大名字 */
             color:#ffd700;
             font-weight:bold;
             font-family:"华文行楷";
         }
         .intro{
-            font-size:16px;
+            font-size:24px; /* 放大文字 */
             color:#666;
-            font-family:"宋体",serif;
-            letter-spacing:2px;
+            margin:10px 0;
         }
         .brown-text{
-            font-size:22px;
+            font-size:28px; /* 放大文字 */
             color:#8b4513;
-            font-family:"细明体",serif;
-            margin:25px 0;
+            margin:15px 0;
+        }
+        .popup-btn{
+            font-size:30px;
+            color:#1e5631;
+            font-weight:bold;
+            margin:50px 0;
+            cursor:pointer;
+            text-decoration:underline;
+        }
+        hr{
+            width:80%;
+            margin:30px auto;
+        }
+
+        /* 弹窗样式 */
+        .mask{
+            display:none;
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.7);
+            z-index:998;
+        }
+        .popup-box{
+            display:none;
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            width:92%;
+            max-height:85vh;
+            overflow:auto;
+            background:#fff8d9;
+            color:#1e5631;
+            padding:30px 20px;
+            border-radius:16px;
+            z-index:999;
+            font-size:24px;
+            line-height:1.8;
+            text-align:left;
+        }
+        .popup-box h1{
+            text-align:center;
+            font-size:40px;
+            margin-bottom:30px;
+        }
+        .popup-box h2{
+            font-size:30px;
+            margin:25px 0 10px;
+        }
+        .popup-box a{
+            color:#1e5631;
+            text-decoration:underline;
+            font-weight:bold;
         }
     </style>
 </head>
@@ -45,30 +98,19 @@
 
 <h1 class="name">Apoiwnd</h1>
 <p class="intro">春宵恋恋变卦</p>
-<hr style="width:50%;margin:40px auto;">
+<hr>
 
 <img class="avatar" src="https://raw.githubusercontent.com/Apoiwnd/Apoiwnd.github.io/main/515593ld.jpg">
 
-<p style="font-size:35px;color:red;margin:30px 0;">🌹</p>
+<p style="font-size:60px;margin:20px 0;">🌹</p>
 <p class="brown-text">真真假假</p>
 <p class="brown-text">花色香皆看化</p>
-<style>
-.mask{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:998;}
-.popup-box{
-display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
-width:85%;max-height:85vh;overflow:auto;
-background:#fff8d9;color:#1e5631;
-padding:40px 35px;border-radius:16px;z-index:999;
-font-family:微软雅黑,宋体;font-size:21px;line-height:2.8;text-align:left;
-}
-.popup-box h1{text-align:center;margin-bottom:45px;font-size:34px;}
-.popup-box h2{margin:30px 0 15px;padding-bottom:6px;border-bottom:1px solid #ccc;}
-.popup-box a{color:#1e5631;text-decoration:underline;}
-.popup-box a:hover{font-weight:bold;}
-</style>
 
+<!-- 点击弹出收藏的入口 -->
+<div class="popup-btn" onclick="openPop()">👉 点击进入 网站珍藏</div>
+
+<!-- 弹窗内容 -->
 <div class="mask" onclick="closePop()"></div>
-
 <div class="popup-box">
 <h1>网站珍藏</h1>
 
@@ -101,7 +143,7 @@ Scott人体动作绘画：<a href="https://www.bodiesinmotion.photo/" target="_b
 <h2>🎵 音乐钢琴娱乐</h2>
 自由键盘钢琴：<a href="https://www.autopiano.cn/" target="_blank">点击进入</a><br>
 重金属摇滚电台：<a href="https://www.rockradio.com/heavymetal" target="_blank">点击进入</a><br>
-*声 Spotify：<a href="https://open.spotify.com/" target="_blank">点击进入（需翻墙）</a>
+Spotify：<a href="https://open.spotify.com/" target="_blank">点击进入（需翻墙）</a>
 
 <h2>🍳 生活工具实用网站</h2>
 香哈网美食做菜教程：<a href="https://www.xiangha.com/" target="_blank">点击进入</a><br>
@@ -144,18 +186,20 @@ age动漫番剧合集：<a href="https://www.agefans.la/" target="_blank">点击
 Skr磁力种子搜索：<a href="https://skrbtvo.top/" target="_blank">点击进入</a><br>
 0x3超强网站合集：<a href="https://0x3.com/" target="_blank">点击进入</a><br>
 开发者全能导航：<a href="https://codernav.com/" target="_blank">点击进入</a><br>
-白嫖合集网站：<a href="https://下次一定.cn/" target="_blank">点击进入</a><br>
+白嫖合集网站：<a href="https://下次一定.cn/" target="_blank">点击进入</a>
+
 </div>
 
 <script>
 function openPop(){
-document.querySelector('.mask').style.display='block'
-document.querySelector('.popup-box').style.display='block'
+    document.querySelector('.mask').style.display='block'
+    document.querySelector('.popup-box').style.display='block'
 }
 function closePop(){
-document.querySelector('.mask').style.display='none'
-document.querySelector('.popup-box').style.display='none'
+    document.querySelector('.mask').style.display='none'
+    document.querySelector('.popup-box').style.display='none'
 }
 </script>
+
 </body>
 </html>
