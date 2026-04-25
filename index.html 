@@ -7,8 +7,7 @@
         *{margin:0;padding:0;box-sizing:border-box}
         body{
             min-height:100vh;
-            background: url('https://github.com/Apoiwnd/Apoiwnd.github.io/blob/main/528336ld.jpg') no-repeat center center;  
-背景：URL（'https：//pic1.zhimg.com/v2-f96c6f1040f499c972d09bcb457d97c5_1440w.jpg'）无重复中心中心;  
+            background: url('https://github.com/Apoiwnd/Apoiwnd.github.io/blob/main/528336ld.jpg') no-repeat center center;   
             background-size: cover;
             background-attachment: fixed;
             font-family:"华文行楷"，cursive；
