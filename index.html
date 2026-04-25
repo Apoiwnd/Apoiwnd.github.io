@@ -14,27 +14,6 @@
             padding:60px 20px;
             line-height:1.8;
         }
-        <div onclick="showNamePop()" style="position:fixed;left:10px;top:20px;font-size:13px;color:#722f37;cursor:pointer;text-decoration:none;">招魂🏳️🏳️</div>
-
-<style>
-.mask2{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;}
-.namePop{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:40px;border-radius:12px;z-index:9999;text-align:center;}
-.closeX{position:absolute;top:10px;right:15px;font-size:22px;cursor:pointer;}
-.vert{writing-mode:vertical-rl;font-size:70px;color:#b8860b;font-weight:bold;margin:6px;}
-</style>
-
-<div class="mask2" onclick="hideNamePop()"></div>
-<div class="namePop">
-<div class="closeX" onclick="hideNamePop()">❌</div>
-<span class="vert">黄</span>
-<span class="vert">思</span>
-<span class="vert">然</span>
-</div>
-
-<script>
-function showNamePop(){mask2.style.display='block';namePop.style.display='block';}
-function hideNamePop(){mask2.style.display='none';namePop.style.display='none';}
-</script>
         .avatar{
             width:220px; /* 放大头像 */
             height:220px;
@@ -44,7 +23,7 @@ function hideNamePop(){mask2.style.display='none';namePop.style.display='none';}
             margin:40px auto;
             display:block;
         }
-           .name{
+        .name{
             font-size:80px; /* 放大名字 */
             color:#ffd700;
             font-weight:bold;
@@ -117,6 +96,9 @@ function hideNamePop(){mask2.style.display='none';namePop.style.display='none';}
 </head>
 <body>
 
+<!-- 头像左下方：酒红色小字 招魂🏳️🏳️ 无下划线 -->
+<div onclick="showPop()" style="position:absolute;left:30px;margin-top:-20px;font-size:13px;color:#722f37;cursor:pointer;text-decoration:none;">招魂🏳️🏳️</div>
+
 <h1 class="name">Apoiwnd</h1>
 <p class="intro">春宵恋恋变卦</p>
 <hr>
@@ -130,10 +112,10 @@ function hideNamePop(){mask2.style.display='none';namePop.style.display='none';}
 <!-- 点击弹出收藏的入口 -->
 <div class="popup-btn" onclick="openPop()">👉 点击进入 网站珍藏</div>
 
-<!-- 弹窗内容 -->
+<!-- 弹窗内容 顶部自带红色关闭按钮 -->
 <div class="mask" onclick="closePop()"></div>
 <div class="popup-box">
-<div onclick="closePop()" style="text-align:right;font-size:28px;color:red;font-weight:bold;cursor:pointer;margin-bottom:20px;">✖ 关闭</div>    
+<div onclick="closePop()" style="text-align:right;font-size:28px;color:red;font-weight:bold;cursor:pointer;margin-bottom:20px;">✖ 关闭</div>
 <h1>网站珍藏</h1>
 
 <h2>📖 看书小说藏书</h2>
@@ -191,7 +173,7 @@ ssgo阿里云盘资源搜索：<a href="https://ssgo.app" target="_blank">点击
 英文打字练习：<a href="https://www.typelit.io/" target="_blank">点击进入</a><br>
 编程打字修炼场：<a href="https://www.biancheng.love/typinghome" target="_blank">点击进入</a><br>
 日语官方学习：<a href="https://www3.nhk.or.jp/nhkworld/lesson/zh/" target="_blank">点击进入</a><br>
-英语每日学习：<a href="https://engoo.com/app/materials/en" target="_blank">点击进入</a><br>
+英语每日学习：<a href="httpsengoo.com/app/materials/en" target="_blank">点击进入</a><br>
 影视剧台词口语检索：<a href="https://www.playphrase.me/#/" target="_blank">点击进入</a>
 
 <h2>🎮 游戏合集游玩</h2>
@@ -212,6 +194,15 @@ Skr磁力种子搜索：<a href="https://skrbtvo.top/" target="_blank">点击进
 
 </div>
 
+<!-- 黄思然竖排专属弹窗 -->
+<div style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:9999;" id="bg2" onclick="hidePop()"></div>
+<div style="display:none;position:fixed;top:50%;left:50%;transform: translate(-50%,-50%);background:#fff;padding:40px;border-radius:12px;z-index:10000;text-align:center;" id="box2">
+<div style="position:absolute;top:8px;right:15px;font-size:22px;cursor:pointer;" onclick="hidePop()">❌</div>
+<span style="writing-mode:vertical-rl;font-size:75px;color:#b8860b;font-weight:bold;margin:5px;">黄</span>
+<span style="writing-mode:vertical-rl;font-size:75px;color:#b8860b;font-weight:bold;margin:5px;">思</span>
+<span style="writing-mode:vertical-rl;font-size:75px;color:#b8860b;font-weight:bold;margin:5px;">然</span>
+</div>
+
 <script>
 function openPop(){
     document.querySelector('.mask').style.display='block'
@@ -221,6 +212,8 @@ function closePop(){
     document.querySelector('.mask').style.display='none'
     document.querySelector('.popup-box').style.display='none'
 }
+function showPop(){bg2.style.display='block';box2.style.display='block';}
+function hidePop(){bg2.style.display='none';box2.style.display='none';}
 </script>
 
 </body>
