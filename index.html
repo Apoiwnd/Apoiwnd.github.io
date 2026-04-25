@@ -23,6 +23,25 @@
             margin:40px auto;
             display:block;
         }
+        <div onclick="showNamePop()" style="position:absolute;left:20px;margin-top:-30px;color:#722f37;font-size:14px;cursor:pointer;text-decoration:none;">招魂🏳️🏳️</div>
+
+<style>
+.namePop{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:50px 30px;border-radius:12px;z-index:9999;text-align:center;}
+.namePop span{writing-mode:vertical-rl;font-size:60px;color:#b8860b;font-weight:bold;margin:10px;}
+.closeX{position:absolute;top:10px;right:15px;font-size:22px;cursor:pointer;}
+.mask2{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:9998;}
+</style>
+
+<div class="mask2" onclick="hideNamePop()"></div>
+<div class="namePop">
+<div class="closeX" onclick="hideNamePop()">❌</div>
+<span>黄</span><span>思</span><span>然</span>
+</div>
+
+<script>
+function showNamePop(){document.querySelector('.mask2').style.display='block';document.querySelector('.namePop').style.display='block';}
+function hideNamePop(){document.querySelector('.mask2').style.display='none';document.querySelector('.namePop').style.display='none';}
+</script>
         .name{
             font-size:80px; /* 放大名字 */
             color:#ffd700;
